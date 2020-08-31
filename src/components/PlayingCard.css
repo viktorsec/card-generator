@@ -1,0 +1,31 @@
+.playing-card {
+  background-color: white;
+  border: 0.5rem solid darkslategrey;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  display: inline-block;
+  width: 15rem;
+}
+
+.playing-card dl {
+  margin: 0;
+}
+
+.playing-card dt {
+  display: none;
+}
+
+.playing-card dd {
+  margin: 0;
+}
+
+.playing-card .title {
+  font-size: 2rem;
+  font-weight: 700;
+  border-bottom: 1px solid darkslategrey;
+}
+
+.playing-card .image {
+  font-size: 5rem;
+}
