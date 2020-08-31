@@ -5,28 +5,48 @@ import PlayingCard from './components/PlayingCard';
 function App() {
   const cards = [
     {
-      level: 1,
-      title: 'Strážná',
-      image: '💂‍♀️',
-      description: 'Určite hráča a menujte kartu (nie Strážnu). Pokiaľ má hráč túto kartu v tomto kole končí.',
+      topLeft: '2',
+      topRight: '3',
+      effect: 'potiahni kartu superovi',
+      production: '-',
+      image: '💂‍',
+      color: 'red',
     },
     {
-      level: 2,
-      title: 'Kňaz',
-      image: '🙏',
-      description: 'Pozrite si postavu súpera.',
+      topLeft: '1',
+      topRight: '3',
+      effect: 'Potiahni si kartu',
+      production: '-',
+      image: '💂‍♀️',
+      color: 'blue',
+    },
+    {
+      topLeft: '5',
+      topRight: '3',
+      effect: 'Potiahni si kartu',
+      production: '-',
+      image: '💂‍♀️',
+      color: 'green',
+    },
+    {
+      topLeft: '7',
+      topRight: '3',
+      effect: 'Potiahni si kartu',
+      production: '-',
+      image: '💂‍♀️',
+      color: 'orangered',
     },
   ];
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="app">
+      <div className="playing-card-list">
         {cards.map((card) => 
           <PlayingCard
             {...card}
-            key={card.title}
+            key={JSON.stringify(card)}
           />
         )}
-      </header>
+      </div>
     </div>
   );
 }

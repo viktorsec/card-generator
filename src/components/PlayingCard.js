@@ -4,19 +4,17 @@ import './PlayingCard.css';
 export default class PlayingCard extends Component {
 
   render() {
-    const { title, image, level, description } = this.props;
+    const { topLeft, topRight, image, effect, production, color } = this.props;
     return (
       <div className="playing-card">
-        <dl>
-          <dt>Title</dt>
-          <dd className="title">{title}</dd>
-          <dt>Image</dt>
-          <dd className="image">{image}</dd>
-          <dt>Level</dt>
-          <dd>{level}</dd>
-          <dt>Description</dt>
-          <dd>{description}</dd>
-        </dl>
+        <div className="stripe" style={{borderColor: color}}/>
+        <div className="top-left">{ topLeft }</div>
+        <div className="top-right">{ topRight }</div>
+        <div className="image">{ image }</div>
+        <div className="body">
+          <div>{ effect }</div>
+          <div>{ production }</div>
+        </div>
       </div>
     );
   };

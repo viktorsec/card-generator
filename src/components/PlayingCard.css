@@ -2,30 +2,45 @@
   background-color: white;
   border: 0.5rem solid darkslategrey;
   padding: 1.25rem;
-  border-radius: 0.5rem;
-  margin: 1rem;
-  display: inline-block;
-  width: 15rem;
+  position: relative;
 }
 
-.playing-card dl {
-  margin: 0;
+@media screen {
+  .playing-card {
+    border-radius: 0.5rem;
+  }
 }
 
-.playing-card dt {
-  display: none;
-}
-
-.playing-card dd {
-  margin: 0;
-}
-
-.playing-card .title {
-  font-size: 2rem;
-  font-weight: 700;
-  border-bottom: 1px solid darkslategrey;
+.playing-card .stripe {
+  border-top: 1rem solid gray;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .playing-card .image {
-  font-size: 5rem;
+  font-size: 7.5rem;
+  text-align: center;
+}
+
+.top-left,
+.top-right {
+  position: absolute;
+  top: 1.5rem;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  border-radius: 50%;
+  border: 5px solid darkslategrey;
+  font-weight: 700;
+}
+
+.top-left {
+  left: 1rem;
+}
+
+.top-right {
+  right: 1rem;
 }
