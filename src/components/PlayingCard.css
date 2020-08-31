@@ -21,6 +21,7 @@
 
 .playing-card .image {
   font-size: 7.5rem;
+  min-height: 1em;
   text-align: center;
 }
 
