@@ -3,10 +3,11 @@ const getKey = (col) => {
     1: 'type',
     2: 'count',
     3: 'color',
-    4: 'topLeft',
-    5: 'topRight',
-    6: 'production',
-    7: 'effect',
+    4: 'image',
+    5: 'topLeft',
+    6: 'topRight',
+    7: 'production',
+    8: 'effect',
   };
   return map[col] || col;
 }

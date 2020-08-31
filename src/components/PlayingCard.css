@@ -1,7 +1,7 @@
 .playing-card {
   background-color: white;
   border: 0.5rem solid darkslategrey;
-  padding: 1.25rem;
+  padding: 2rem 1.25rem 1.25rem;
   position: relative;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .playing-card .image {
-  font-size: 7.5rem;
+  font-size: 6.5rem;
   min-height: 1em;
   text-align: center;
 }

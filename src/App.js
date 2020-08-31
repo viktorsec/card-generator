@@ -10,7 +10,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    getCards('1-RKJdy1Pu5Tep2XW9Dvzgz0W5-xML7k4TcSmQ0Z7awk', 4)
+    getCards('', 4)
       .then((data) => {
         this.setState({cards: data});
       });
