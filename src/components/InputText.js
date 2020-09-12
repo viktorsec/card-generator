@@ -4,7 +4,7 @@ import './InputText.css';
 export default class InputText extends Component {
 
   render() {
-    const { label, value, inputHandler } = this.props;
+    const { label, value, onChange } = this.props;
 
     return (
       <div className="input-text">
@@ -12,8 +12,7 @@ export default class InputText extends Component {
           {label}
         </div>
         <input type="text"
-          onInput={inputHandler}
-          onChange={inputHandler}
+          onChange={onChange}
           value={value}
         />
       </div>

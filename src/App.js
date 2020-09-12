@@ -6,16 +6,11 @@ import { getCards } from './services/GoogleDocsService';
 
 class App extends Component {
 
-  constructor() {
-    super();
-    this.state = {
-      cards: [],
-      sheetId: '',
-      sheetPageNumber: 4,
-    };
-  }
-
-  componentDidMount() {}
+  state = {
+    cards: [],
+    sheetId: '',
+    sheetPageNumber: 1,
+  };
 
   updateSheetId = (event) => {
     this.setState({
@@ -29,7 +24,8 @@ class App extends Component {
     });
   }
 
-  fetchCards = async () => {
+  fetchCards = async (e) => {
+    e.preventDefault();
     const { sheetId, sheetPageNumber } = this.state;
     const cards = await getCards(sheetId, sheetPageNumber);
     this.setState({cards});
@@ -39,24 +35,27 @@ class App extends Component {
     const { cards, sheetId, sheetPageNumber } = this.state;
     return (
       <div className="app">
-        <div className="app-settings">
+        <form
+          className="app-settings"
+          onSubmit={this.fetchCards}
+        >
           <InputText
             label="Sheet ID"
             value={sheetId}
-            inputHandler={this.updateSheetId}
+            onChange={this.updateSheetId}
           />
           <InputText
             label="Sheet page number"
             value={sheetPageNumber}
-            inputHandler={this.updateSheetPageNumber}
+            onChange={this.updateSheetPageNumber}
           />
           <button
-            onClick={this.fetchCards}
+            type="submit"
           >
-            Fetch
-            <span role="img" aria-label="bone">🦴</span>
+            Fetch 
+            <span role="img" aria-label="bone" aria-hidden="true">🦴</span>
           </button>
-        </div>
+        </form>
         <div className="playing-card-list">
           {cards.map((card) => {
             const { count, ...rest } = card;
